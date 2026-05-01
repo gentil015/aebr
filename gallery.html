@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Essential Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Gallery - AEBR Cyivugiza Church Photos | Worship, Community & Outreach</title>
+  <meta name="description" content="Photo gallery showcasing AEBR Cyivugiza Church activities including worship services, prayer meetings, youth ministry, community outreach, and health programs in Rwanda." />
+  <meta name="keywords" content="AEBR Cyivugiza gallery, church photos, worship services, community outreach Rwanda, church events Rutsiro, prayer meetings, youth ministry" />
+  <meta name="author" content="AEBR Cyivugiza Church" />
+  <link rel="canonical" href="https://aebrcyivugizachurch.rw/gallery.html" />
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aebrcyivugizachurch.rw/gallery.html" />
+  <meta property="og:title" content="AEBR Cyivugiza Church - Photo Gallery" />
+  <meta property="og:description" content="Explore our church activities, worship services, and community programs through our photo gallery." />
+  <meta property="og:image" content="https://aebrcyivugizachurch.rw/images/og-gallery.jpg" />
+  <meta property="og:site_name" content="AEBR Cyivugiza Church" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="rw_RW" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AEBR Cyivugiza Church Gallery" />
+  <meta name="twitter:description" content="Church activities, worship services & community programs in Rwanda" />
+  <meta name="twitter:image" content="https://aebrcyivugizachurch.rw/images/og-gallery.jpg" />
+
+  <!-- Search Engine & Crawling Meta Tags -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+
+  <!-- JSON-LD Structured Data for Gallery -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AEBR Cyivugiza Church Gallery",
+    "description": "Photo gallery of AEBR Cyivugiza Church activities and events",
+    "url": "https://aebrcyivugizachurch.rw/gallery.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "AEBR Cyivugiza Church",
+      "url": "https://aebrcyivugizachurch.rw/"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    .gallery-page {
+      padding-top: var(--nav-h);
+      min-height: 100vh;
+      background: var(--cream);
+    }
+    .gallery-page .gallery-header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    .gallery-page .gallery-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+    .gallery-page .gallery-header p {
+      color: var(--ink-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .gallery-page .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .gallery-page .filter-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s var(--ease);
+    }
+    .gallery-page .filter-btn:hover,
+    .gallery-page .filter-btn.active {
+      background: var(--gold);
+      color: var(--white);
+    }
+    .gallery-page .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .gallery-page .back-link:hover {
+      color: var(--green-deep);
+    }
+    .gallery-page .gallery-container {
+      width: min(1200px, 100% - 3rem);
+      margin-inline: auto;
+      padding-bottom: 4rem;
+    }
+    .gallery-page .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      grid-auto-flow: dense;
+    }
+    .gallery-page .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--cream-dark);
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), opacity 0.3s var(--ease);
+    }
+    .gallery-page .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .gallery-page .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease);
+    }
+    .gallery-page .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-page .gallery-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,46,31,0.75) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 1.25rem;
+      opacity: 0;
+      transition: opacity 0.3s var(--ease);
+      pointer-events: none;
+    }
+    .gallery-page .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+    .gallery-page .gallery-item.hidden {
+      display: none;
+    }
+    .gallery-page .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 18, 12, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      z-index: 1000;
+      overflow: hidden;
+    }
+    .gallery-page .lightbox.open {
+      display: flex;
+    }
+    .gallery-page .lightbox-content {
+      position: relative;
+      width: min(95vw, 1000px);
+      max-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      align-items: center;
+    }
+    .gallery-page .lightbox-img {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      background: var(--cream);
+    }
+    .gallery-page .lightbox-caption {
+      color: var(--white);
+      text-align: center;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+    .gallery-page .lightbox-close,
+    .gallery-page .lightbox-nav {
+      position: absolute;
+      border: none;
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .gallery-page .lightbox-close:hover,
+    .gallery-page .lightbox-nav:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.05);
+    }
+    .gallery-page .lightbox-close {
+      top: 1rem;
+      right: 1rem;
+    }
+    .gallery-page .lightbox-nav.prev {
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .gallery-page .lightbox-nav.next {
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (max-width: 768px) {
+      .gallery-page .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+      .gallery-page .gallery-item {
+        aspect-ratio: 1;
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery-page .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="home.html" class="nav-logo">
+        <img src="images/logo.png" alt="AEBR Logo" class="logo-icon" style="width:34px;height:34px;object-fit:contain;background:none;border-radius:50%;" />
+        AEBR Cyivugiza
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="home.html#about" data-i18n="nav_about">About</a>
+        <a href="home.html#mission" data-i18n="nav_mission">Mission</a>
+        <a href="home.html#programs" data-i18n="nav_programs">Programs</a>
+        <a href="home.html#impact" data-i18n="nav_impact">Impact</a>
+        <a href="gallery.html" class="active" data-i18n="nav_gallery">Gallery</a>
+        <a href="home.html#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-option active" id="langEN">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-option" id="langKIN">KIN</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="gallery-page">
+
+    <div class="gallery-header">
+      <div class="container">
+        <a href="home.html" class="back-link">
+          <i class="bi bi-arrow-left"></i>
+          <span data-i18n="gallery_back">Back to Home
+        </a>
+        <h1 data-i18n="gallery_title">Gallery</h1>
+        <p data-i18n="gallery_subtitle">Our Photo Collection</p>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all" data-i18n="gallery_filter_all">All</button>
+          <button class="filter-btn" data-filter="worship" data-i18n="gal_worship">Worship</button>
+          <button class="filter-btn" data-filter="community" data-i18n="gallery_filter_community">Community Work</button>
+          <button class="filter-btn" data-filter="events" data-i18n="gallery_filter_events">Events</button>
+          <button class="filter-btn" data-filter="services" data-i18n="gallery_filter_services">Services</button>
+          <button class="filter-btn" data-filter="outreach" data-i18n="gal_outreach">Outreach</button>
+          <button class="filter-btn" data-filter="health" data-i18n="pillar_health">Health</button>
+          <button class="filter-btn" data-filter="leadership" data-i18n="gallery_filter_leadership">Leadership</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-container">
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="community">
+          <img src="images/g46.jpg" alt="Worship" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g37.jfif" alt="Worship" loading="lazy" />
+          
+        </div>
+
+        <div class="gallery-item" data-category="health">
+          <img src="images/g47.jpg" alt="Prayer" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="health">
+          <img src="images/g38.jfif" alt="Prayer" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="leadership">
+          <img src="images/g39.jfif" alt="Youth" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="leadership">
+          <img src="images/g40.jfif" alt="Outreach" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="">
+          <img src="images/g41.jfif" alt="Health" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/g42.jfif" alt="Community" loading="lazy" />
+          
+        </div>
+        
+        <div class="gallery-item" data-category="outreach">
+          <img src="images/g37.jfif" alt="Service" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="leadership">
+          <img src="images/g11.jpg" alt="Church family" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/g12.jpg" alt="Event" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="leadership">
+          <img src="images/g13.jpg" alt="Outreach" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="outreach">
+          <img src="images/g14.jpg" alt="Worship" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g15.jpg" alt="Celebration" loading="lazy" />
+          
+        </div>
+        
+        <div class="gallery-item" data-category="outreach">
+          <img src="images/g17.jpg" alt="Prayer circle" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g18.jpg" alt="Community gathering" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="leadership">
+          <img src="images/g19.jpg" alt="Leadership" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="youth">
+          <img src="images/g20.jpg" alt="Youth group" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g21.jpg" alt="Mission work" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/g22.jpg" alt="Support" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g23.jpg" alt="Service" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="health">
+          <img src="images/g24.jpg" alt="Faith gathering" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g25.jpg" alt="Community outreach" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g26.jpg" alt="Youth activities" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="health">
+          <img src="images/g27.jpg" alt="Church service" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="health">
+          <img src="images/g28.jpg" alt="Health program" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g29.jpg" alt="Community event" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="health">
+          <img src="images/g30.jpg" alt="Church leaders" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g31.jpg" alt="Special event" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/g32.jpg" alt="Church program" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g33.jpg" alt="Mission activity" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g34.jpg" alt="Worship gathering" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="services">
+          <img src="images/g35.jpg" alt="Youth ministry" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="health">
+          <img src="images/g36.jpg" alt="Health initiative" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="worship">
+          <img src="images/g37.jfif" alt="Church gathering" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/g38.jfif" alt="Community celebration" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="outreach">
+          <img src="images/g39.jfif" alt="Outreach program" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="leadership">
+          <img src="images/g40.jfif" alt="Church leadership" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="services">
+          <img src="images/g41.jfif" alt="Church service" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="youth">
+          <img src="images/g42.jfif" alt="Youth program" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="health">
+          <img src="images/g43.jpg" alt="Health service" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="community">
+          <img src="images/g44.jpg" alt="Community support" loading="lazy" />
+          
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/g45.jpg" alt="Special event" loading="lazy" />
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer"><i class="bi bi-x-lg"></i></button>
+        <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous photo"><i class="bi bi-chevron-left"></i></button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+        <button class="lightbox-nav next" id="lightboxNext" aria-label="Next photo"><i class="bi bi-chevron-right"></i></button>
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="AEBR Logo" class="logo-icon" style="width:30px;height:30px;object-fit:contain;background:none;border-radius:50%;" />
+            AEBR Cyivugiza
+          </div>
+          <p>Faith – Health – Development</p>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <a href="home.html#about">About</a>
+          <a href="home.html#mission">Mission</a>
+          <a href="home.html#programs">Programs</a>
+          <a href="home.html#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <h5>Connect</h5>
+          <div class="social-icons">
+            <a href="https://web.facebook.com/profile.php?id=61588736206349" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"> AEBR Cyivugiza Church. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Gallery filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        galleryItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.classList.remove('hidden');
+            item.style.display = 'block';
+          } else {
+            item.classList.add('hidden');
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Load main script for language switching and navigation -->
+  <script src="script.js"></script>
+</body>
+</html>

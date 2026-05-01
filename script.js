@@ -98,6 +98,15 @@ const translations = {
     footer_quick:   "Quick Links",
     footer_connect: "Connect",
     footer_rights:  "All rights reserved.",
+
+    /* Gallery Page */
+    gallery_back:              "Back to Home",
+    gallery_subtitle:          "Our Photo Collection",
+    gallery_filter_all:        "All",
+    gallery_filter_community:  "Community Work",
+    gallery_filter_events:     "Events",
+    gallery_filter_services:   "Services",
+    gallery_filter_leadership: "Leadership",
   },
 
   kin: {
@@ -188,6 +197,15 @@ const translations = {
     footer_quick:   "Ihuza Byihuse",
     footer_connect: "Duhuze",
     footer_rights:  "Uburenganzira bwose bwihariwe.",
+
+    /* Gallery Page */
+    gallery_back:              "Garuka ku rugo",
+    gallery_subtitle:          "Inyandiko y'amafoto yacu",
+    gallery_filter_all:        "Byose",
+    gallery_filter_community:  "Serivisi y'Umuryango",
+    gallery_filter_events:     "Ibihe",
+    gallery_filter_services:   "Serivisi",
+    gallery_filter_leadership: "Ubuyobozi",
   }
 };
 
@@ -242,8 +260,13 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ── Navbar scroll state ─────────────────────────────────── */
 const navbar = document.getElementById('navbar');
+const isGallery = document.querySelector('.gallery-page') !== null;
 const onScroll = () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  if (isGallery) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }
 };
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll(); // run once on load
@@ -326,8 +349,8 @@ const formSuccess = document.getElementById('formSuccess');
 const formError = document.getElementById('formError');
 const submitBtn = document.getElementById('submitBtn');
 
-// Initialize EmailJS (only if credentials are set)
-if (EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+// Initialize EmailJS (only if credentials are set and emailjs is available)
+if (typeof emailjs !== 'undefined' && EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
   emailjs.init(EMAILJS_PUBLIC_KEY);
 }
 
@@ -419,128 +442,72 @@ function showError(msg) {
   }
 }
 
-/* ── Gallery Modal Popup ─────────────────────────────────── */
-const seeAllBtn = document.getElementById('seeAllBtn');
-const galleryModal = document.getElementById('galleryModal');
-const galleryModalClose = document.getElementById('galleryModalClose');
-const modalImage = document.getElementById('modalImage');
-const modalCounter = document.getElementById('modalCounter');
-const modalThumbs = document.getElementById('modalThumbs');
-const modalPrev = document.getElementById('modalPrev');
-const modalNext = document.getElementById('modalNext');
-const galleryNodes = document.querySelectorAll('#galleryGrid .gallery-item');
+/* ── Gallery lightbox modal ──────────────────────────────── */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+let visiblePhotos = [];
+let currentIndex = 0;
 
-const galleryImages = [
-  { src: 'images/g1.jpg', alt: 'Worship', caption: 'Worship' },
-  { src: 'images/g2.jpg', alt: 'Prayer', caption: 'Prayer' },
-  { src: 'images/g3.jpg', alt: 'Youth', caption: 'Youth' },
-  { src: 'images/g4.jpg', alt: 'Outreach', caption: 'Outreach' },
-  { src: 'images/g5.jpg', alt: 'Health', caption: 'Health' },
-  { src: 'images/g6.jpg', alt: 'Community', caption: 'Community' },
-  { src: 'images/g7.jpg', alt: 'Fellowship', caption: 'Fellowship' },
-  { src: 'images/g8.jpg', alt: 'Service', caption: 'Service' },
-  { src: 'images/g10.jpg', alt: 'Community work', caption: 'Community work' },
-  { src: 'images/g11.jpg', alt: 'Church family', caption: 'Church family' },
-  { src: 'images/g12.jpg', alt: 'Event', caption: 'Event' },
-  { src: 'images/g13.jpg', alt: 'Outreach', caption: 'Outreach' },
-  { src: 'images/g14.jpg', alt: 'Worship', caption: 'Worship' },
-  { src: 'images/g15.jpg', alt: 'Celebration', caption: 'Celebration' },
-  { src: 'images/g17.jpg', alt: 'Prayer circle', caption: 'Prayer circle' },
-  { src: 'images/g18.jpg', alt: 'Community gathering', caption: 'Community gathering' },
-  { src: 'images/g19.jpg', alt: 'Leadership', caption: 'Leadership' },
-  { src: 'images/g20.jpg', alt: 'Youth group', caption: 'Youth group' },
-  { src: 'images/g21.jpg', alt: 'Mission work', caption: 'Mission work' },
-  { src: 'images/g22.jpg', alt: 'Support', caption: 'Support' },
-  { src: 'images/g23.jpg', alt: 'Service', caption: 'Service' },
-  { src: 'images/g24.jpg', alt: 'Faith gathering', caption: 'Faith gathering' },
-  { src: 'images/about-us.jpeg', alt: 'About us', caption: 'About us' },
-  { src: 'images/banner.jpeg', alt: 'Church banner', caption: 'Church banner' },
-  { src: 'images/home-image.jpeg', alt: 'Church community', caption: 'Church community' },
-  { src: 'images/igitaramo.jpeg', alt: 'Event performance', caption: 'Event performance' }
-];
+const updateVisiblePhotos = () => {
+  visiblePhotos = Array.from(document.querySelectorAll('.gallery-item img'));
+};
 
-let currentGalleryIndex = 0;
-
-function updateGalleryModal(index) {
-  const image = galleryImages[index];
-  if (!image) return;
-
-  currentGalleryIndex = index;
-  modalImage.src = image.src;
-  modalImage.alt = image.alt;
-  modalCounter.textContent = `${index + 1}/${galleryImages.length}`;
-
-  modalThumbs.querySelectorAll('.modal-thumb').forEach((thumb, thumbIndex) => {
-    thumb.classList.toggle('active', thumbIndex === index);
-  });
-}
-
-function openGalleryModal(index = 0) {
-  if (!galleryModal) return;
-  updateGalleryModal(index);
-  galleryModal.classList.add('active');
-  galleryModal.setAttribute('aria-hidden', 'false');
+const openLightbox = index => {
+  updateVisiblePhotos();
+  const photo = visiblePhotos[index];
+  if (!photo || !lightbox) return;
+  lightboxImg.src = photo.src;
+  lightboxImg.alt = photo.alt;
+  lightboxCaption.textContent = photo.alt;
+  currentIndex = index;
+  lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
-}
+};
 
-function closeGalleryModal() {
-  if (!galleryModal) return;
-  galleryModal.classList.remove('active');
-  galleryModal.setAttribute('aria-hidden', 'true');
+const closeLightbox = () => {
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
   document.body.style.overflow = '';
-}
+};
 
-function changeGalleryImage(direction) {
-  let nextIndex = currentGalleryIndex + direction;
-  if (nextIndex < 0) nextIndex = galleryImages.length - 1;
-  if (nextIndex >= galleryImages.length) nextIndex = 0;
-  updateGalleryModal(nextIndex);
-}
+const showPhoto = index => {
+  if (!lightbox) return;
+  updateVisiblePhotos();
+  if (!visiblePhotos.length) return;
+  const nextIndex = (index + visiblePhotos.length) % visiblePhotos.length;
+  openLightbox(nextIndex);
+};
 
-function buildGalleryThumbnails() {
-  if (!modalThumbs) return;
-  modalThumbs.innerHTML = '';
+if (lightbox) {
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const currentPhoto = item.querySelector('img');
+      updateVisiblePhotos();
+      const clickIndex = visiblePhotos.indexOf(currentPhoto);
+      if (clickIndex !== -1) openLightbox(clickIndex);
+    });
+  });
 
-  galleryImages.forEach((image, index) => {
-    const thumb = document.createElement('button');
-    thumb.type = 'button';
-    thumb.className = 'modal-thumb';
-    thumb.innerHTML = `
-      <img src="${image.src}" alt="${image.alt}" />
-      <span>${image.caption}</span>
-    `;
-    thumb.addEventListener('click', () => updateGalleryModal(index));
-    modalThumbs.appendChild(thumb);
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightboxPrev?.addEventListener('click', () => showPhoto(currentIndex - 1));
+  lightboxNext?.addEventListener('click', () => showPhoto(currentIndex + 1));
+  lightboxImg?.addEventListener('click', () => showPhoto(currentIndex + 1));
+
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (!lightbox.classList.contains('open')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+    if (event.key === 'ArrowRight') showPhoto(currentIndex + 1);
   });
 }
-
-buildGalleryThumbnails();
-
-if (seeAllBtn) {
-  seeAllBtn.addEventListener('click', () => openGalleryModal(0));
-}
-
-galleryNodes.forEach(node => {
-  node.addEventListener('click', () => {
-    const index = Number(node.dataset.index ?? 0);
-    openGalleryModal(index);
-  });
-});
-
-galleryModal?.addEventListener('click', (event) => {
-  if (event.target === galleryModal) {
-    closeGalleryModal();
-  }
-});
-galleryModalClose?.addEventListener('click', closeGalleryModal);
-modalPrev?.addEventListener('click', () => changeGalleryImage(-1));
-modalNext?.addEventListener('click', () => changeGalleryImage(1));
-window.addEventListener('keydown', (event) => {
-  if (!galleryModal || !galleryModal.classList.contains('active')) return;
-  if (event.key === 'Escape') closeGalleryModal();
-  if (event.key === 'ArrowLeft') changeGalleryImage(-1);
-  if (event.key === 'ArrowRight') changeGalleryImage(1);
-});
 
 /* ── Active nav link on scroll ───────────────────────────── */
 const sections = document.querySelectorAll('section[id]');

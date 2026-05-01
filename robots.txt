@@ -1,0 +1,30 @@
+# robots.txt for AEBR Cyivugiza Church
+# This file helps search engines understand which pages to crawl and index
+
+User-agent: *
+Allow: /
+Allow: *.html
+Allow: *.css
+Allow: *.js
+Allow: /images/
+
+# Disallow private or admin pages (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Crawl delay (in seconds) - be nice to servers
+Crawl-delay: 1
+
+# Specify sitemap location
+Sitemap: https://aebrcyivugizachurch.rw/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
