@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AEBR Cyivugiza Church</title>
+  <meta name="description" content="AEBR Cyivugiza Church – Faith, Health, Development. Located in Nyabirasi Sector, Rutsiro District, Rwanda." />
+
+  <!-- Google Fonts: Playfair Display (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="images/logo.png" alt="AEBR Logo" class="logo-icon" style="width:34px;height:34px;object-fit:contain;background:none;border-radius:50%;" />
+        <span>AEBR Cyivugiza</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about"    data-i18n="nav_about">About</a>
+        <a href="#mission"  data-i18n="nav_mission">Mission</a>
+        <a href="#programs" data-i18n="nav_programs">Programs</a>
+        <a href="#impact"   data-i18n="nav_impact">Impact</a>
+        <a href="#gallery"  data-i18n="nav_gallery">Gallery</a>
+        <a href="#contact"  data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Toggle -->
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-option" id="langEN">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-option" id="langKIN">KIN</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+
+      <!-- Decorative cross pattern -->
+      <div class="hero-cross-bg" aria-hidden="true"></div>
+
+      <div class="hero-content animate-on-load">
+        <div class="hero-tag" data-i18n="hero_tag">Welcome to Our Church</div>
+        <h1 class="hero-title">AEBR Cyivugiza<br /><em>Church</em></h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">Faith – Health – Development</p>
+
+        <blockquote class="hero-verse">
+          <p data-i18n="hero_verse_text">"Nuko rero, umuntu wese uri muri Kristo aba ari icyaremwe gishya…"</p>
+          <cite>— 2 Abakorinto 5:17</cite>
+        </blockquote>
+
+        <div class="hero-cta">
+          <a href="#about" class="btn btn-primary" data-i18n="hero_cta_learn">Learn More</a>
+          <a href="#contact" class="btn btn-outline" data-i18n="hero_cta_visit">Visit Us</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-grid about-grid">
+
+          <div class="about-visual reveal">
+            <div class="about-img-frame">
+              <img
+                src= "images/home-image.jpeg"
+                alt="Church community gathering"
+                loading="lazy"
+              />
+              <div class="about-badge">
+                <div class="badge-year">Est.</div>
+                <div class="badge-num">AEBR</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text reveal reveal-right">
+            <div class="section-label" data-i18n="about_label">About Us</div>
+            <h2 class="section-title" data-i18n="about_title">A Church Rooted in Faith & Community</h2>
+            <p class="section-body" data-i18n="about_body">
+              Welcome to AEBR Cyivugiza Church, a vibrant rural church located in Nyabirasi Sector, Rutsiro District, Western Province of Rwanda. We are committed to preaching the Gospel of Jesus Christ and transforming lives through faith, love, and community service. Our mission goes beyond spiritual growth—we actively promote healthy living and economic development among the people we serve.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-num">3</span>
+                <span class="stat-label" data-i18n="stat_pillars">Core Pillars</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">1</span>
+                <span class="stat-label" data-i18n="stat_district">District</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">∞</span>
+                <span class="stat-label" data-i18n="stat_hope">Hope</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MISSION & VISION ===== -->
+    <section class="section mission" id="mission">
+      <div class="mission-bg-shape" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label" data-i18n="mission_label">Our Purpose</div>
+          <h2 class="section-title" data-i18n="mission_title">Mission & Vision</h2>
+        </div>
+
+        <div class="mission-grid">
+          <!-- Mission -->
+          <div class="mission-card reveal">
+            <div class="card-icon">✦</div>
+            <h3 data-i18n="mission_card_title">Our Mission</h3>
+            <ul class="mission-list">
+              <li data-i18n="mission_1">Preach the Gospel</li>
+              <li data-i18n="mission_2">Transform lives</li>
+              <li data-i18n="mission_3">Promote health</li>
+              <li data-i18n="mission_4">Develop communities</li>
+            </ul>
+          </div>
+
+          <!-- Vision -->
+          <div class="mission-card vision-card reveal reveal-right">
+            <div class="card-icon">◈</div>
+            <h3 data-i18n="vision_card_title">Our Vision</h3>
+            <p class="vision-text" data-i18n="vision_text">
+              "A transformed community living in Christ, health, and development."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAMS ===== -->
+    <section class="section programs" id="programs">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label" data-i18n="programs_label">What We Do</div>
+          <h2 class="section-title" data-i18n="programs_title">Our Programs</h2>
+        </div>
+
+        <div class="programs-grid">
+
+          <div class="program-card reveal" style="--delay: 0.0s">
+            <div class="program-icon"><i class="bi bi-calendar-event"></i></div>
+            <h4 data-i18n="prog_sunday_title">Sunday Service</h4>
+            <p data-i18n="prog_sunday_body">Weekly worship, praise, and the Word every Sunday morning.</p>
+          </div>
+
+          <div class="program-card reveal" style="--delay: 0.1s">
+            <div class="program-icon"><i class="bi bi-pray"></i></div>
+            <h4 data-i18n="prog_prayer_title">Prayer Meetings</h4>
+            <p data-i18n="prog_prayer_body">Regular gatherings for corporate prayer and intercession.</p>
+          </div>
+
+          <div class="program-card reveal" style="--delay: 0.2s">
+            <div class="program-icon"><i class="bi bi-megaphone"></i></div>
+            <h4 data-i18n="prog_evang_title">Evangelism</h4>
+            <p data-i18n="prog_evang_body">Outreach and gospel sharing in surrounding communities.</p>
+          </div>
+
+          <div class="program-card reveal" style="--delay: 0.3s">
+            <div class="program-icon"><i class="bi bi-people"></i></div>
+            <h4 data-i18n="prog_youth_title">Youth Ministry</h4>
+            <p data-i18n="prog_youth_body">Empowering the next generation through faith and fellowship.</p>
+          </div>
+
+          <div class="program-card reveal" style="--delay: 0.4s">
+            <div class="program-icon"><i class="bi bi-hand-thumbs-up"></i></div>
+            <h4 data-i18n="prog_outreach_title">Community Outreach</h4>
+            <p data-i18n="prog_outreach_body">Health education, economic empowerment, and social support.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IMPACT SECTION ===== -->
+    <section class="section impact" id="impact">
+      <div class="container">
+        <div class="impact-inner reveal">
+          <div class="section-label" data-i18n="impact_label">Our Impact</div>
+          <h2 class="section-title impact-title" data-i18n="impact_title">Gospel + Action</h2>
+          <p class="impact-body" data-i18n="impact_body">
+            We combine the Gospel with practical actions such as health education and economic empowerment.
+          </p>
+          <div class="impact-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">✝</div>
+              <span data-i18n="pillar_faith">Faith</span>
+            </div>
+            <div class="pillar-plus">+</div>
+            <div class="pillar">
+              <div class="pillar-icon">❤</div>
+              <span data-i18n="pillar_health">Health</span>
+            </div>
+            <div class="pillar-plus">+</div>
+            <div class="pillar">
+              <div class="pillar-icon">🌱</div>
+              <span data-i18n="pillar_dev">Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label" data-i18n="gallery_label">Our Moments</div>
+          <h2 class="section-title" data-i18n="gallery_title">Gallery</h2>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item reveal" style="--delay:0.0s" data-index="0">
+            <img src="images/g1.jpg" alt="Gallery 1" loading="lazy" />
+            <div class="gallery-overlay"><span data-i18n="gal_worship">Worship</span></div>
+          </div>
+          <div class="gallery-item gallery-tall reveal" style="--delay:0.1s" data-index="1">
+            <img src="images/g2.jpg" alt="Gallery 2" loading="lazy" />
+            <div class="gallery-overlay"><span data-i18n="gal_prayer">Prayer</span></div>
+          </div>
+          <div class="gallery-item reveal" style="--delay:0.2s" data-index="2">
+            <img src="images/g4.jpg" alt="Gallery 3" loading="lazy" />
+            <div class="gallery-overlay"><span data-i18n="gal_youth">Youth</span></div>
+          </div>
+          <div class="gallery-item gallery-wide reveal" style="--delay:0.3s" data-index="3">
+            <img src="images/g3.jpg" alt="Gallery 4" loading="lazy" />
+            <div class="gallery-overlay"><span data-i18n="gal_outreach">Outreach</span></div>
+          </div>
+          <div class="gallery-item reveal" style="--delay:0.4s" data-index="4">
+            <img src="images/g5.jpg" alt="Gallery 5" loading="lazy" />
+            <div class="gallery-overlay"><span data-i18n="gal_health">Health</span></div>
+          </div>
+          <div class="gallery-item reveal" style="--delay:0.5s" data-index="5">
+            <img src="images/g6.jpg" alt="Gallery 6" loading="lazy" />
+            <div class="gallery-overlay"><span data-i18n="gal_community">Community</span></div>
+          </div>
+        </div>
+
+        <div class="gallery-cta">
+          <button class="btn btn-outline-dark" id="seeAllBtn" data-i18n="gallery_see_all">See All Photos</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="photo-modal" id="galleryModal" aria-hidden="true" role="dialog" aria-label="Gallery viewer">
+      <div class="modal-shell" role="document">
+        <div class="modal-header">
+          <div class="modal-meta">
+            <span class="modal-title">Gallery</span>
+            <span class="modal-counter" id="modalCounter">1/1</span>
+          </div>
+          <button class="modal-close" id="galleryModalClose" aria-label="Close gallery">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-viewer">
+            <button class="modal-nav prev" id="modalPrev" aria-label="Previous image">‹</button>
+            <img src="" alt="" id="modalImage" />
+            <button class="modal-nav next" id="modalNext" aria-label="Next image">›</button>
+          </div>
+          <div class="modal-thumbs" id="modalThumbs" aria-label="Gallery thumbnails"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label" data-i18n="contact_label">Get In Touch</div>
+          <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Info -->
+          <div class="contact-info reveal">
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <h5 data-i18n="contact_phone_label">Phone</h5>
+                <a href="tel:+250788840399">(+250) 788 840 399</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <h5 data-i18n="contact_loc_label">Location</h5>
+                <p data-i18n="contact_loc_val">Nyabirasi Sector, Rutsiro District,<br />Western Province, Rwanda</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉</div>
+              <div>
+                <h5 data-i18n="contact_email_label">Email</h5>
+                <a href="mailto:info@aebrcyivugiza.org">info@aebrcyivugiza.org</a>
+              </div>
+            </div>
+
+            <!-- Map placeholder -->
+            <div class="map-placeholder">
+              <div class="map-label">📍 Rutsiro District, Rwanda</div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="map-container">
+              <h5 data-i18n="contact_map_label">Our Location</h5>
+              <div class="google-map">
+                <!-- 
+                  ============================================================
+                  GOOGLE MAP EMBED
+                  ============================================================
+                  To update the map location:
+                  1. Go to https://www.google.com/maps
+                  2. Search for your location
+                  3. Click "Share" → "Embed a map"
+                  4. Copy the iframe src URL and replace below
+                  ============================================================ 
+                -->
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12337.631133544557!2d29.34129272449799!3d-1.7669678278426566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dd1d000d426945%3A0x38c30aa6e99ab2a!2sAEBR%20CYIVUGIZA!5e1!3m2!1sen!2srw!4v1777645617542!5m2!1sen!2srw" 
+                  width="600" 
+                  height="450" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="AEBR Cyivugiza Church Location">
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="contact-form-wrap reveal reveal-right">
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="from_name" data-i18n="form_name">Full Name</label>
+                <input type="text" id="from_name" name="from_name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="from_email" data-i18n="form_email">Email Address</label>
+                <input type="email" id="from_email" name="from_email" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="message" data-i18n="form_message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <!-- Hidden field for recipient email -->
+              <input type="hidden" name="to_email" id="to_email" value="turimumahoroetienne@gmail.com" />
+              <button type="submit" class="btn btn-primary btn-full" id="submitBtn" data-i18n="form_submit">Send Message</button>
+              <div class="form-success" id="formSuccess" data-i18n="form_success">
+                ✓ Message sent! We'll be in touch soon.
+              </div>
+              <div class="form-error" id="formError" data-i18n="form_error">
+                ✗ Something went wrong. Please try again.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="AEBR Logo" class="logo-icon" style="width:30px;height:30px;object-fit:contain;background:none;border-radius:50%;" />
+            <span>AEBR Cyivugiza</span>
+          </div>
+          <p data-i18n="footer_tagline">Faith – Health – Development</p>
+        </div>
+
+        <div class="footer-links">
+          <h5 data-i18n="footer_quick">Quick Links</h5>
+          <a href="#about"    data-i18n="nav_about">About</a>
+          <a href="#mission"  data-i18n="nav_mission">Mission</a>
+          <a href="#programs" data-i18n="nav_programs">Programs</a>
+          <a href="#contact"  data-i18n="nav_contact">Contact</a>
+        </div>
+
+        <div class="footer-social">
+          <h5 data-i18n="footer_connect">Connect</h5>
+          <div class="social-icons">
+            <a href="#" class="social-btn" aria-label="Facebook">f</a>
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+            <a href="#" class="social-btn" aria-label="WhatsApp">📱</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> AEBR Cyivugiza Church. <span data-i18n="footer_rights">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
