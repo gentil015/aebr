@@ -17,7 +17,7 @@ Disallow: /temp/
 Crawl-delay: 1
 
 # Specify sitemap location
-Sitemap: https://aebrcyivugizachurch.rw/sitemap.xml
+Sitemap: https://cyivugiza.netlify.app/sitemap.xml
 
 # Google specific
 User-agent: Googlebot

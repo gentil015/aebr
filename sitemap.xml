@@ -17,31 +17,31 @@
 
   <!-- Gallery Page -->
   <url>
-    <loc>https://aebrcyivugizachurch.rw/gallery.html</loc>
+    <loc>https://cyivugiza.netlify.app/gallery.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://aebrcyivugizachurch.rw/images/g1.jpg</image:loc>
+      <image:loc>https://cyivugiza.netlify.app/images/g1.jpg</image:loc>
       <image:title>Church Gallery</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://aebrcyivugizachurch.rw/images/g2.jpg</image:loc>
+      <image:loc>https://cyivugiza.netlify.app/images/g2.jpg</image:loc>
       <image:title>Prayer Services</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://aebrcyivugizachurch.rw/images/g3.jpg</image:loc>
+      <image:loc>https://cyivugiza.netlify.app/images/g3.jpg</image:loc>
       <image:title>Youth Ministry</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://aebrcyivugizachurch.rw/images/g4.jpg</image:loc>
+      <image:loc>https://cyivugiza.netlify.app/images/g4.jpg</image:loc>
       <image:title>Community Outreach</image:title>
     </image:image>
   </url>
 
   <!-- Alternative language versions (for multilingual support) -->
   <url>
-    <loc>https://aebrcyivugizachurch.rw/</loc>
+    <loc>https://cyivugiza.netlify.app/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
