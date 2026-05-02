@@ -45,6 +45,15 @@ const translations = {
     vision_card_title:  "Our Vision",
     vision_text:        '"A transformed community living in Christ, health, and development."',
 
+    /* Pastor */
+    pastor_label:       "Leadership",
+    pastor_title:       "Our Pastor",
+    pastor_position:    "Senior Pastor",
+    pastor_period:      "Leading Since:",
+    pastor_badge_since: "Since 2015",
+    pastor_desc_en:     "Pastor Turimumahoro Etienne has been leading AEBR Cyivugiza Church with dedication and spiritual vision since 2015. His heart is devoted to preaching the Gospel of Jesus Christ, shepherding the flock with compassion, and fostering community development through faith-centered initiatives. Under his leadership, the church has grown in faith, health programs, and community outreach.",
+    pastor_quote:       '"Serving with love, leading with faith, building a stronger community together."',
+
     /* Programs */
     programs_label:     "What We Do",
     programs_title:     "Our Programs",
@@ -144,6 +153,15 @@ const translations = {
     vision_card_title:  "Icyifuzo cyacu",
     vision_text:        '"Umuryango wahindutse utuye muri Kristo, ubuzima bwiza, n\'iterambere."',
 
+    /* Pastor */
+    pastor_label:       "Ubwiyunge",
+    pastor_title:       "Umuyobozi wacu",
+    pastor_position:    "Reveland",
+    pastor_period:      "Yayoboye Kuva:",
+    pastor_badge_since: "Kuva 2013",
+    pastor_desc_kin:    "Pastor Turimumahoro Etienne n'ishingiro ry'uru gwanaj rwa AEBR Cyivugiza mu mahoro n'ubwenge bwa sipiritueri kuva 2013. Umutima we warimo kumubisha Ijambo ry'Iyesu Kristo, kuyobora inyama z'Imana mu mahoro n'ubwenge, no gutera imbere iterambere ry'umuntu mu mahoro. Mu mahoro ye, uru gwanaj rwiyongere mu mahoro, mu mubaka w'ubuzima, n'ubufatanye bw'uru gihugu.",
+    pastor_quote:       '"Gusezerera mu mahoro, kuyobora mu kwizera, n\'kubaka umuryango uranaga hamwe."',
+
     /* Programs */
     programs_label:     "Ibikorwa byacu",
     programs_title:     "Porogaramu Zacu",
@@ -230,6 +248,14 @@ function applyLanguage(lang) {
     if (dict[key] !== undefined) {
       el.innerHTML = dict[key];
     }
+  });
+
+  // Handle language-specific elements (pastor description)
+  document.querySelectorAll('.lang-en').forEach(el => {
+    el.classList.toggle('hidden', lang !== 'en');
+  });
+  document.querySelectorAll('.lang-kin').forEach(el => {
+    el.classList.toggle('hidden', lang !== 'kin');
   });
 
   // Update lang toggle button UI
@@ -340,7 +366,7 @@ if (langToggle) {
    - 'YOUR_PUBLIC_KEY'     → e.g., 'xxxxxxxxxxxxx'
    ============================================================ */
 const EMAILJS_SERVICE_ID = 'service_hu6yv47';
-const EMAILJS_TEMPLATE_ID = 'template_ew6fzw8';
+const EMAILJS_TEMPLATE_ID = 'template_nu9efn9';
 const EMAILJS_PUBLIC_KEY = '4cLu4MPf6ThfVxDni';
 
 /* ── Contact form with EmailJS ───────────────────────────── */
@@ -399,10 +425,11 @@ contactForm?.addEventListener('submit', async (e) => {
   // Send email via EmailJS
   try {
     const templateParams = {
-      from_name: fromName,
-      from_email: fromEmail,
-      to_email: 'turimumahoroetienne@gmail.com',
-      message: message
+      title: "Contact Form Submission",
+      name: fromName,
+      time: new Date().toLocaleString(),
+      message: message,
+      email: fromEmail
     };
 
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
