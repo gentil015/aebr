@@ -46,8 +46,13 @@
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/logo.png" />
+  <!-- Favicon - Modern Multi-Format Support -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#0A2418" />
+  <meta name="msapplication-TileColor" content="#0A2418" />
   
   <!-- JSON-LD Structured Data (Schema.org) -->
   <script type="application/ld+json">
@@ -242,13 +247,6 @@
             <h3 class="pastor-name">REV. Pastor Turimumahoro Etienne</h3>
             <p class="pastor-title" data-i18n="pastor_position">Reveland Pastor</p>
 
-            <div class="pastor-info">
-              <div class="info-item">
-                <span class="info-label" data-i18n="pastor_period">Leading Since:</span>
-                
-              </div>
-            </div>
-
             <div class="pastor-description">
               <p class="lang-en" data-i18n="pastor_desc_en">
                 I am Rev. Pastor TURIMUMAHORO Etienne, the Senior Pastor of Cyivugiza Local Baptist Church. I am called to lead people to God, helping them receive Jesus Christ as Lord and Savior and to live transformed lives through His love.
@@ -260,7 +258,7 @@ My vision is to integrate the Gospel with community development by nurturing spi
             </div>
 
             <div class="pastor-quote">
-              <p data-i18n="pastor_quote">r
+              <p data-i18n="pastor_quote">
                 <em>"I am committed to working together with the church and partners to build a strong, faith-filled, and compassionate community that is equipped to grow, become self-reliant, and positively transform society."</em>
               </p>
             </div>
@@ -527,6 +525,7 @@ My vision is to integrate the Gospel with community development by nurturing spi
 
       <div class="footer-bottom">
         <p>© <span id="year"></span> AEBR Cyivugiza Church. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        <p style="font-size: 0.85rem; color: rgba(251, 247, 239, 0.7); margin-top: 0.8rem;">This platform developed by <strong>BII Technologies</strong></p>
       </div>
     </div>
   </footer>

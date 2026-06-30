@@ -1,0 +1,38 @@
+{
+  "name": "AEBR Cyivugiza Church",
+  "short_name": "AEBR Cyivugiza",
+  "description": "A Christ-centered church dedicated to faith, health, and community development in Rwanda",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0A2418",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["religion"],
+  "screenshots": [
+    {
+      "src": "images/logo.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ]
+}

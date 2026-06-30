@@ -119,112 +119,187 @@ const translations = {
   },
 
   kin: {
-    /* Nav */
-    nav_about:    "Abo turi bo",
-    nav_mission:  "Inshingano",
-    nav_programs: "Ibikorwa",
-    nav_impact:   "Ingaruka",
-    nav_gallery:  "Amafoto",
-    nav_contact:  "Twandikire",
+  /* ===========================
+     Navigation
+  =========================== */
+  nav_about: "Abo Turibo",
+  nav_mission: "Inshingano",
+  nav_programs: "Ibikorwa",
+  nav_impact: "Ibyo Dukora",
+  nav_gallery: "Amafoto",
+  nav_contact: "Twandikire",
 
-    /* Hero */
-    hero_tag:       "Murakaza neza mu Itorero",
-    hero_subtitle:  "Kwizera – Ubuzima bwiza – Iterambere",
-    hero_verse_text: '"Nuko rero, umuntu wese uri muri Kristo aba ari icyaremwe gishya…"',
-    hero_cta_learn: "Menya Byinshi",
-    hero_cta_visit: "Tugendeye",
+  /* ===========================
+     Hero Section
+  =========================== */
+  hero_tag: "Murakaza Neza mu Itorero AEBR Cyivugiza",
+  hero_subtitle: "Kwizera • Ubuzima Bwiza • Iterambere",
+  hero_verse_text: '"Nuko rero, umuntu wese uri muri Kristo aba ari icyaremwe gishya..."',
+  hero_cta_learn: "Menya Byinshi",
+  hero_cta_visit: "Dusure",
 
-    /* About */
-    about_label: "Abo turi bo",
-    about_title: "Itorero Rishingiye kuri Kristo n'Umuryango",
-    about_body:  "Murakaza neza mu Itorero rya AEBR Cyivugiza, itorero ry'imidugudu rigira ubukirisu mu Murenge wa Nyabirasi, Akarere ka Rutsiro, Intara y'Iburengerazuba mu Rwanda. Twiyemeje kwamamaza ubutumwa bwiza bwa Yesu Kristo no guhindura ubuzima bwa benshi binyuze mu kwizera, igitsure, n'ishyirahamwe. Inshingano yacu irenze kubungabunga imyuka y'umwuka—dutanga ikiganiro cy'ubuzima bwiza n'iterambere ry'ubukungu mu baturage twakira.",
-    stat_pillars: "Inkingi 3",
-    stat_district: "Akarere",
-    stat_hope:     "Ibyiringiro",
+  /* ===========================
+     About
+  =========================== */
+  about_label: "Abo Turibo",
+  about_title: "Itorero Ryubakiye kuri Kristo no Gukorera Umuryango",
 
-    /* Mission */
-    mission_label:      "Intego yacu",
-    mission_title:      "Inshingano & Icyifuzo",
-    mission_card_title: "Inshingano yacu",
-    mission_1:          "Kwamamaza ubutumwa bwiza",
-    mission_2:          "Guhindura ubuzima bw'abantu",
-    mission_3:          "Guteza imbere ubuzima bwiza",
-    mission_4:          "Gutera imbere imirimo mu miryango",
-    vision_card_title:  "Icyifuzo cyacu",
-    vision_text:        '"Umuryango wahindutse utuye muri Kristo, ubuzima bwiza, n\'iterambere."',
+  about_body:
+    "Itorero AEBR Cyivugiza riherereye mu Murenge wa Nyabirasi, Akarere ka Rutsiro, mu Ntara y’Iburengerazuba bw’u Rwanda. Twiyemeje kwamamaza Ubutumwa Bwiza bwa Yesu Kristo, gufasha abantu gukura mu kwizera no guteza imbere imibereho myiza y’abaturage binyuze mu bikorwa by’urukundo, ubuzima bwiza n’iterambere.",
 
-    /* Pastor */
-    pastor_label:       "Ubwiyunge",
-    pastor_title:       "Umuyobozi wacu",
-    pastor_position:    "Reveland",
-    pastor_period:      "Yayoboye Kuva:",
-    pastor_badge_since: "Kuva 2013",
-    pastor_desc_kin:    "Pastor Turimumahoro Etienne n'ishingiro ry'uru gwanaj rwa AEBR Cyivugiza mu mahoro n'ubwenge bwa sipiritueri kuva 2013. Umutima we warimo kumubisha Ijambo ry'Iyesu Kristo, kuyobora inyama z'Imana mu mahoro n'ubwenge, no gutera imbere iterambere ry'umuntu mu mahoro. Mu mahoro ye, uru gwanaj rwiyongere mu mahoro, mu mubaka w'ubuzima, n'ubufatanye bw'uru gihugu.",
-    pastor_quote:       '"Gusezerera mu mahoro, kuyobora mu kwizera, n\'kubaka umuryango uranaga hamwe."',
+  stat_pillars: "Inkingi 3",
+  stat_district: "Rutsiro",
+  stat_hope: "Ibyiringiro",
 
-    /* Programs */
-    programs_label:     "Ibikorwa byacu",
-    programs_title:     "Porogaramu Zacu",
-    prog_sunday_title:  "Amateraniro Yo Ku  Cyumweru",
-    prog_sunday_body:   "Gusenga, gushimira no Kumva Ijambo Ry' Imana buri cyumweru mu gitondo saa mbiri.",
-    prog_prayer_title:  "Amateraniro yo Gusenga",
-    prog_prayer_body:   "Amateraniro ahoraho yo gusenga hamwe no gusaba.",
-    prog_evang_title:   "Ubutumwa bwiza",
-    prog_evang_body:    "Kwamamaza ubutumwa bwiza mu miryango Yose.",
-    prog_youth_title:   "Ubusaza bw'Urubyiruko",
-    prog_youth_body:    "Gutera inkunga itsinda riz'ejo hazaza binyuze mu kwizera.",
-    prog_outreach_title:"Serivisi mu Muryango",
-    prog_outreach_body: "Ubuzima bwiza, iterambere ry'ubukungu, no guteza imbere imibereho Myiza.",
+  /* ===========================
+     Mission
+  =========================== */
+  mission_label: "Intego Yacu",
+  mission_title: "Inshingano n'Icyerekezo",
 
-    /* Impact */
-    impact_label: "Ibikorwa byacu",
-    impact_title: "Ubutumwa + Ibikorwa",
-    impact_body:  "Duhuza ubutumwa bwiza n'ibikorwa bifatika birimo ubuzima bwiza n'iterambere ry'ubukungu.",
-    pillar_faith:  "Kwizera",
-    pillar_health: "Ubuzima",
-    pillar_dev:    "Iterambere",
+  mission_card_title: "Inshingano Yacu",
 
-    /* Gallery */
-    gallery_label:     "Ibihe byacu",
-    gallery_title:     "Amafoto",
-    gallery_see_all:   "Reba Byose",
-    gal_worship:       "Gusenga",
-    gal_prayer:        "Amasengesho",
-    gal_youth:         "Urubyiruko",
-    gal_outreach:      "Serivisi",
-    gal_health:        "Ubuzima",
-    gal_community:     "Umuryango",
+  mission_1: "Kwamamaza Ubutumwa Bwiza bwa Yesu Kristo.",
+  mission_2: "Gufasha abantu gukura mu kwizera.",
+  mission_3: "Guteza imbere ubuzima bwiza.",
+  mission_4: "Kubaka umuryango utekanye kandi utera imbere.",
 
-    /* Contact */
-    contact_label:       "Twandikire",
-    contact_title:       "Twandikire",
-    contact_phone_label: "Telefone",
-    contact_loc_label:   "Aho tubakarere",
-    contact_loc_val:     "Murenge wa Nyabirasi, Akarere ka Rutsiro,<br />Intara y'Iburengerazuba, Rwanda",
-    contact_email_label: "Imeli",
-    contact_map_label: "Aho turi",
-    form_name:    "Amazina yawe",
-    form_email:   "Aderesi ya imeli",
-    form_message: "Ubutumwa",
-    form_submit:  "Ohereza ubutumwa",
-    form_success: "✓ Ubutumwa bwoherejwe! Tuzaguhura vuba.",
-    form_error:   "✗ Hari ikibazo. Mwirengereze.",
+  vision_card_title: "Icyerekezo Cyacu",
 
-    /* Footer */
-    footer_tagline: "Kwizera – Ubuzima bwiza – Iterambere",
-    footer_quick:   "Ihuza Byihuse",
-    footer_connect: "Duhuze",
-    footer_rights:  "Uburenganzira bwose bwihariwe.",
+  vision_text:
+    '"Kubaka umuryango wubakiye kuri Kristo urangwa n\'urukundo, ubuzima bwiza n\'iterambere rirambye."',
 
-    /* Gallery Page */
-    gallery_back:              "Garuka ku rugo",
-    gallery_subtitle:          "Inyandiko y'amafoto yacu",
-    gallery_filter_all:        "Byose",
-    gallery_filter_community:  "Serivisi y'Umuryango",
-    gallery_filter_events:     "Ibihe",
-    gallery_filter_services:   "Serivisi",
-    gallery_filter_leadership: "Ubuyobozi",
-  }
+  /* ===========================
+     Pastor
+  =========================== */
+  pastor_label: "Ubuyobozi",
+  pastor_title: "Umushumba Wacu",
+
+  pastor_position: "Pasiteri Mukuru",
+
+  pastor_period: "Yatangiye Kuyobora:",
+  pastor_badge_since: "Kuva mu 2015",
+
+  pastor_desc_kin:
+    "Pasiteri Turimumahoro Etienne amaze imyaka ayobora Itorero AEBR Cyivugiza mu budahemuka no mu bwenge bw'Umwuka Wera. Yiyemeje kwamamaza Ubutumwa Bwiza bwa Yesu Kristo, kwita ku bakristo no guteza imbere ibikorwa bifasha umuryango. Mu buyobozi bwe, itorero ryakomeje gukura mu kwizera, mu bikorwa by'ubuzima bwiza no gufasha abaturage.",
+
+  pastor_quote:
+    '"Gukorera Imana mu rukundo, kuyobora mu kwizera no kubaka umuryango ukomeye."',
+
+  /* ===========================
+     Programs
+  =========================== */
+  programs_label: "Ibikorwa Byacu",
+  programs_title: "Porogaramu Zacu",
+
+  prog_sunday_title: "Amateraniro yo Ku Cyumweru",
+  prog_sunday_body:
+    "Buri Cyumweru duhurira hamwe mu kuramya Imana, kuyisingiza no kwiga Ijambo ryayo.",
+
+  prog_prayer_title: "Amateraniro y'Amasengesho",
+  prog_prayer_body:
+    "Gusengera hamwe no gusabira Itorero, igihugu n'imiryango yacu.",
+
+  prog_evang_title: "Ivugabutumwa",
+  prog_evang_body:
+    "Kugeza Ubutumwa Bwiza ku bantu no mu bice bitandukanye by'igihugu.",
+
+  prog_youth_title: "Umurimo w'Urubyiruko",
+  prog_youth_body:
+    "Kurera urubyiruko mu kwizera, mu ndangagaciro nziza no mu bufatanye.",
+
+  prog_outreach_title: "Gukorera Umuryango",
+  prog_outreach_body:
+    "Ibikorwa byo guteza imbere ubuzima, imibereho myiza n'iterambere ry'abaturage.",
+
+  /* ===========================
+     Impact
+  =========================== */
+  impact_label: "Ibyo Tugeraho",
+  impact_title: "Ubutumwa Buhindura Ubuzima",
+
+  impact_body:
+    "Twizera ko kwizera nyakuri kujyana n'ibikorwa. Ni yo mpamvu duhuza ivugabutumwa n'ibikorwa bifasha abaturage kugira ubuzima bwiza n'iterambere.",
+
+  pillar_faith: "Kwizera",
+  pillar_health: "Ubuzima Bwiza",
+  pillar_dev: "Iterambere",
+
+  /* ===========================
+     Gallery
+  =========================== */
+  gallery_label: "Amafoto Yacu",
+  gallery_title: "Ububiko bw'Amafoto",
+
+  gallery_see_all: "Reba Amafoto Yose",
+
+  gal_worship: "Kuramya",
+  gal_prayer: "Amasengesho",
+  gal_youth: "Urubyiruko",
+  gal_outreach: "Ibikorwa by'Urukundo",
+  gal_health: "Ubuzima Bwiza",
+  gal_community: "Umuryango",
+
+  /* ===========================
+     Contact
+  =========================== */
+  contact_label: "Twandikire",
+  contact_title: "Duhamagare cyangwa Utwandikire",
+
+  contact_phone_label: "Telefone",
+
+  contact_loc_label: "Aho Duherereye",
+
+  contact_loc_val:
+    "Umurenge wa Nyabirasi, Akarere ka Rutsiro,<br>Intara y'Iburengerazuba, u Rwanda",
+
+  contact_email_label: "Imeyili",
+
+  contact_map_label: "Aho Itorero Riherereye",
+
+  form_name: "Amazina Yawe",
+  form_email: "Aderesi ya Imeyili",
+  form_message: "Andika Ubutumwa Bwawe",
+
+  form_submit: "Ohereza Ubutumwa",
+
+  form_success:
+    "✓ Ubutumwa bwawe bwoherejwe neza. Tuzagusubiza vuba.",
+
+  form_error:
+    "✗ Habaye ikibazo. Ongera ugerageze.",
+
+  /* ===========================
+     Footer
+  =========================== */
+  footer_tagline:
+    "Kwizera • Ubuzima Bwiza • Iterambere",
+
+  footer_quick: "Aho Wasanga Vuba",
+
+  footer_connect: "Dukurikire",
+
+  footer_rights:
+    "Uburenganzira bwose bwihariwe.",
+
+  /* ===========================
+     Gallery Page
+  =========================== */
+  gallery_back: "Subira Ahabanza",
+
+  gallery_subtitle:
+    "Amafoto agaragaza ibikorwa n'ubuzima bw'Itorero",
+
+  gallery_filter_all: "Byose",
+
+  gallery_filter_community: "Ibikorwa by'Umuryango",
+
+  gallery_filter_events: "Ibikorwa Bikuru",
+
+  gallery_filter_services: "Amateraniro",
+
+  gallery_filter_leadership: "Ubuyobozi",
+}
 };
 
 
@@ -280,7 +355,9 @@ function applyLanguage(lang) {
             scroll-reveal animations, form feedback, year
    ============================================================ */
 
-/* ── Year in footer ──────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ── Year in footer ──────────────────────────────────────── */
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -319,19 +396,24 @@ navLinks?.querySelectorAll('a').forEach(link => {
 });
 
 /* ── Scroll reveal ───────────────────────────────────────── */
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-);
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && revealEls.length) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  revealEls.forEach(el => revealObserver.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('is-visible'));
+}
 
 /* ── Language toggle ────────────────────────────────────── */
 const langEN  = document.getElementById('langEN');
@@ -557,3 +639,5 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach(s => sectionObserver.observe(s));
+
+});
